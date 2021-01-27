@@ -1,16 +1,18 @@
-# Explanation-Vulnerability-Detector
+# AMEVulDetector
+This repo is a python implementation of our AMEVulDetector for smart contract vulnerability detection, which combines the global graph feature and local expert patterns. 
 
-This repo is a python implementation of smart contract vulnerability detection of our method, 
-combining the global graph feature and local expert patterns. 
-Here, we explore using graph neural networks and expert knowledge for smart contract vulnerability detection.
 
+## Overview
+<div align=center><img width="880" height="115" src="./figs/overview2.png"/></div>
+The overall architecture of our proposed method is illustrated in this figure, which consists of three components: (a) a local expert pattern extraction tool, which extracts vulnerability-specific expert patterns from the code; (b) a graph construction and normalization module, which transforms the source code into a global semantic graph; and (c) an attentive multi-encoder network that combines expert patterns and the graph feature for vulnerability detection and outputs explainable weights.
 
 
 ## Required Packages
 * **python**3 or above
 * **TensorFlow** 2.0 or above
 * **sklearn** for model evaluation
-
+* **numpy** 1.18 or above
+* ****
 
 
 Run the following script to install the required packages.
@@ -18,22 +20,17 @@ Run the following script to install the required packages.
 pip install --upgrade pip
 pip install tensorflow==2.0
 pip install scikit-learn
+pip install numpy
 ```
 
 
 ## Dataset
-We empirically evaluate our proposed methods on two open-source datasets released in the [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf), 
-namely Ethereum smart contract (ESC) and VNT Chain smart contract (VSC).
-Experiments for reentrancy and blockInfo dependence vulnerability are conducted on ESC, 
-while infinite loop vulnerability is evaluated on VSC.
+We empirically evaluate our proposed method on two benchmark datasets, namely Ethereum smart contract (ESC) and VNT Chain smart contract (VSC). Following Zhuang et al., 2020, we conduct experiments for reentrancy and timestamp dependence vulnerability on ESC, and evaluate infinite loop vulnerability on VSC.
 
-## Global graph feature and local pattern feature
-
-The contract graph features are extracted by using a temporal-message-propagation graph neural network in the [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf), 
-while the local expert pattern features are extracted by using a feed-forward network.  
+The specific description of the two datasets can be found in Zhuang et al., 2020, while the datasets and source code on Github.
 
 
-## Running Project
+## Getting started
 * To run program, use this command: python AMEVulDetector.py.
 * Also, you can use specific hyper-parameters to train the model. All the hyper-parameters can be found in `parser.py`.
 
@@ -44,27 +41,16 @@ python AMEVulDetector.py --model EncoderWeight --lr 0.002 --dropout 0.2 --epochs
 ```
 
 
-## Performance comparison
-
-<div align=center><img width="400" height="380" src="./figs/network_comparison.png"/></div>
-<div align=center><img width="400" height="380" src="./figs/tools_comparison.png"/></div>
+## Results
+<div align=center><img width="880" height="230" src="./figs/performance.png"/></div>
 
 
 
 ## Case Study 
-We now present a case study of interpretability evaluation on a real-world function that is vulnerable to reentrancy 
-vulnerability. Particularly, we characterize a function code of reentrancy vulnerability as both the global graph and 
-local expert patterns, which are shown in the left of this figure. Intuitively, the interpretable weights of the 
-global graph feature and local pattern features are illustrated in the right of Fig. 8, where the features with the 
-high weight may play an important role in detecting reentrancy vulnerability.
+We further present a case study in the following Figure, where the withdraw function is a real-world smart contract function that is vulnerable to reentrancy vulnerability. Particularly, we characterize the function code as both the global graph and three local patterns for reentrancy (respectively corresponding to the enoughBalance, callValueInvoc, balanceDeduction), which are shown in the left of the following figure. Intuitively, The weights of the global graph feature and each local pattern feature are illustrated in the right of the following figure, where our system is able to clearly explain the reasons behind our prediction.
+
+<div align=center><img width="560" height="210" src="./figs/case_study_1.png"/></div>
 
 
-<div align=center><img width="400" height="380" src="./figs/case_study.png"/></div>
-
-
-## Interpretability Evaluation
-
-<div><img width="400" height="380" src="./figs/reentrancy.png"/></div>
-<div><img width="400" height="380" src="./figs/timestamp.png"/></div>
-<div><img width="400" height="380" src="./figs/loops.png"/></div>
+<!-- ### Evaluations of Interpretability on three types of vulnerabilities -->
 
