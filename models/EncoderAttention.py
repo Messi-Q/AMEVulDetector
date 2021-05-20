@@ -4,6 +4,9 @@ import tensorflow as tf
 from sklearn.utils import compute_class_weight
 from sklearn.metrics import confusion_matrix
 
+tf.enable_eager_execution()
+tf.compat.v1.set_random_seed(6603)
+
 print(tf.__version__)
 args = parameter_parser()
 

@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.utils import compute_class_weight
 from sklearn.metrics import confusion_matrix
 
+tf.enable_eager_execution()
 tf.compat.v1.set_random_seed(6603)
 
 print(tf.__version__)
@@ -128,7 +129,7 @@ class EncoderWeight:
         pattern3weight_output = pattern3weight.predict(
             [self.graph_test, self.pattern1test, self.pattern2test, self.pattern3test])
 
-        # store the weights
+        # output the weights
         print("start")
         gw = graphweight_output.flatten()
         np.savetxt("results/re_gw.txt", gw)
@@ -151,9 +152,7 @@ class EncoderWeight:
             "g_av: " + str(g_av) + ", gw_all :" + str(gw.var()) + "\n pw1_mean:" + str(pw1_av) + ", pw1_all:" + str(
                 pw1.var()) + "\n pw2_mean: " + str(pw2_av) + ", pw2_all: " + str(pw2.var()) + "\n pw3_mean: " + str(
                 pw3_av) + ", pw3_all: " + str(pw3.var()) + "\n")
-        # print(pattern1weight_output)
-        # print(pattern2weight_output)
-        # print(pattern3weight_output)
+
         print("end")
 
         # decoder the testing vectors

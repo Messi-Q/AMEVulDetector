@@ -6,7 +6,6 @@ Date: Created on 11:08 2020-10-22
 from __future__ import print_function
 from parser import parameter_parser
 import tensorflow as tf
-import numpy as np
 from sklearn.utils import compute_class_weight
 from sklearn.metrics import confusion_matrix
 
@@ -63,19 +62,6 @@ class FNNModel:
                                        batch_size=self.batch_size, epochs=self.epochs, class_weight=self.class_weight,
                                        validation_split=0.2, verbose=2)
 
-        print('history:')
-        print(str(train_history.history))
-
-        # decoder the training vectors
-        finalvec = tf.keras.Model(inputs=self.model.input, outputs=self.model.get_layer('outputmergevec').output)
-        finalvec_output = finalvec.predict([self.pattern1train, self.pattern2train, self.pattern3train])
-        finalveclayer = tf.keras.layers.Dense(1000, activation='relu')
-        finalvec = finalveclayer(finalvec_output)
-        finalvecvalue = finalvec.numpy()
-        value = np.hsplit(finalvecvalue, 4)
-        print(value)
-        print(value[0].shape, value[1].shape, value[2].shape, value[3].shape)
-
         # self.model.save_weights("model.pkl")
 
     """
@@ -87,16 +73,6 @@ class FNNModel:
         values = self.model.evaluate([self.pattern1test, self.pattern2test, self.pattern3test], self.y_test,
                                      batch_size=self.batch_size, verbose=1)
         print("Loss: ", values[0], "Accuracy: ", values[1])
-
-        # decoder the testing vectors
-        finalvec = tf.keras.Model(inputs=self.model.input, outputs=self.model.get_layer('outputmergevec').output)
-        finalvec_output = finalvec.predict([self.pattern1test, self.pattern2test, self.pattern3test])
-        finalveclayer = tf.keras.layers.Dense(1000, activation='relu')
-        finalvec = finalveclayer(finalvec_output)
-        finalvecvalue = finalvec.numpy()
-        value = np.hsplit(finalvecvalue, 4)
-        print(value)
-        print(value[0].shape, value[1].shape, value[2].shape, value[3].shape)
 
         # predictions
         predictions = self.model.predict([self.pattern1test, self.pattern2test, self.pattern3test],
