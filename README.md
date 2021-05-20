@@ -46,10 +46,6 @@ python AMEVulDetector.py --model EncoderWeight --lr 0.002 --dropout 0.2 --epochs
 ```
 
 
-## Results
-<div align=center><img width="880" height="230" src="./figs/performance.png"/></div>
-
-
 
 ## Case Study 
 We further present a case study in the following Figure, where the withdraw function is a real-world smart contract function that is vulnerable to reentrancy vulnerability. Particularly, we characterize the function code as both the global graph and three local patterns for reentrancy (respectively corresponding to the enoughBalance, callValueInvoc, balanceDeduction), which are shown in the left of the following figure. Intuitively, The weights of the global graph feature and each local pattern feature are illustrated in the right of the following figure, where our system is able to clearly explain the reasons behind our prediction.
