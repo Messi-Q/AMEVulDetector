@@ -1,0 +1,1 @@
+graph:21,pattern1:198,pattern2:108,pattern3:6
