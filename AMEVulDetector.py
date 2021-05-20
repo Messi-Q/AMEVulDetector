@@ -19,23 +19,19 @@ def main():
     pattern1train = []
     pattern2train = []
     pattern3train = []
-    pattern4train = []
     for i in range(len(pattern_train)):
         pattern1train.append([pattern_train[i][0]])
         pattern2train.append([pattern_train[i][1]])
         pattern3train.append([pattern_train[i][2]])
-        # pattern4train.append([pattern_train[i][3]])
 
     # The testing set of patterns' feature
     pattern1test = []
     pattern2test = []
     pattern3test = []
-    pattern4test = []
     for i in range(len(pattern_test)):
         pattern1test.append([pattern_test[i][0]])
         pattern2test.append([pattern_test[i][1]])
         pattern3test.append([pattern_test[i][2]])
-        # pattern4test.append([pattern_test[i][3]])
 
     # labels of certain contract function in training set (expert annotation)
     y_train = []
