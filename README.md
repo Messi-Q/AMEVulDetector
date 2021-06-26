@@ -47,7 +47,7 @@ Following [Zhuang et al., 2020](https://www.ijcai.org/Proceedings/2020/0454.pdf)
 
 The specific description of the two datasets can be found in Zhuang et al., 2020, while the datasets and source code are released on [Github](https://github.com/Messi-Q/GNNSCVulDetector).
 
-More details for the dataset instruction can be found on our dataset page at [dataset_preprocessing](https://github.com/Messi-Q/Smart-Contract-Dataset), which is continuously improving.
+More details for the dataset instruction can be found on our dataset page at [Smart-Contract-Dataset](https://github.com/Messi-Q/Smart-Contract-Dataset), which is continuously improving.
 
 ## Getting started
 * To run program, use this command: python AMEVulDetector.py.
