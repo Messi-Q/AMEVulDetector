@@ -13,13 +13,12 @@ and (c) an attentive multi-encoder network that combines expert patterns and the
 ## Citation
 Please use this citation if you want to cite our [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf) or codebase in your paper:
 ```
-@misc{liu2021smart,
-      title={Smart Contract Vulnerability Detection: From Pure Neural Network to Interpretable Graph Feature and Expert Pattern Fusion}, 
-      author={Zhenguang Liu and Peng Qian and Xiang Wang and Lei Zhu and Qinming He and Shouling Ji},
-      year={2021},
-      eprint={2106.09282},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{liu2021smart,
+  title={Smart Contract Vulnerability Detection: From Pure Neural Network to Interpretable Graph Feature and Expert Pattern Fusion},
+  author={Liu, Zhenguang and Qian, Peng and Wang, Xiang and Zhu, Lei and He, Qinming and Ji, Shouling},
+   booktitle={IJCAI},
+  pages={2751--2759},
+  year={2021}
 }
 ``` 
 
