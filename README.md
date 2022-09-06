@@ -10,6 +10,19 @@ The overall architecture of our proposed method is illustrated in the Figure, wh
 and (c) an attentive multi-encoder network that combines expert patterns and the graph feature for vulnerability detection and outputs explainable weights.
 
 
+## Citation
+Please use this citation if you want to cite our [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf) or codebase in your paper:
+```
+@inproceedings{liu2021smart,
+  title={Smart Contract Vulnerability Detection: From Pure Neural Network to Interpretable Graph Feature and Expert Pattern Fusion},
+  author={Liu, Zhenguang and Qian, Peng and Wang, Xiang and Zhu, Lei and He, Qinming and Ji, Shouling},
+   booktitle={IJCAI},
+  pages={2751--2759},
+  year={2021}
+}
+``` 
+
+
 ## Required Packages
 * **python** 3 or above
 * **TensorFlow** 2.0 or above
@@ -33,7 +46,7 @@ Following [Zhuang et al., 2020](https://www.ijcai.org/Proceedings/2020/0454.pdf)
 
 The specific description of the two datasets can be found in Zhuang et al., 2020, while the datasets and source code are released on [Github](https://github.com/Messi-Q/GNNSCVulDetector).
 
-More details for the dataset instruction can be found on our dataset page at [dataset_preprocessing](https://github.com/Messi-Q/dataset_preprocessing), which is continuously improving.
+More details for the dataset instruction can be found on our dataset page at [Smart-Contract-Dataset](https://github.com/Messi-Q/Smart-Contract-Dataset), which is continuously improving.
 
 ## Getting started
 * To run program, use this command: python AMEVulDetector.py.
@@ -46,12 +59,15 @@ python AMEVulDetector.py --model EncoderWeight --lr 0.002 --dropout 0.2 --epochs
 ```
 
 
-
 ## Case Study 
 We further present a case study in the following Figure, where the withdraw function is a real-world smart contract function that is vulnerable to reentrancy vulnerability. Particularly, we characterize the function code as both the global graph and three local patterns for reentrancy (respectively corresponding to the enoughBalance, callValueInvoc, balanceDeduction), which are shown in the left of the following figure. Intuitively, The weights of the global graph feature and each local pattern feature are illustrated in the right of the following figure, where our system is able to clearly explain the reasons behind our prediction.
 
 <div align=center><img width="560" height="210" src="./figs/case_study_1.png"/></div>
 
 
-<!-- ### Evaluations of Interpretability on three types of vulnerabilities -->
+
+### Reference
+1. Zhuang, Yuan and Liu, Zhenguang and Qian, Peng, et al. Smart Contract Vulnerability Detection using Graph Neural Network. IJCAI, 2020. [GNNSCVulDetector](https://github.com/Messi-Q/GNNSCVulDetector)
+2. Qian P, Liu Z, He Q, et al. Towards automated reentrancy detection for smart contracts based on sequential models. 2020. [ReChecker](https://github.com/Messi-Q/ReChecker)
+
 
