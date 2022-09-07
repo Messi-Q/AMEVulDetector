@@ -65,6 +65,8 @@ We further present a case study in the following Figure, where the withdraw func
 <div align=center><img width="560" height="210" src="./figs/case_study_1.png"/></div>
 -->
 
+### Note
+If any question, please email to messi.qp711@gmail.com. 
 
 ### Reference
 1. Zhuang, Yuan and Liu, Zhenguang and Qian, Peng, et al. Smart Contract Vulnerability Detection using Graph Neural Network. IJCAI, 2020. [GNNSCVulDetector](https://github.com/Messi-Q/GNNSCVulDetector)
