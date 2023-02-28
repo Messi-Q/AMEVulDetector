@@ -1,5 +1,5 @@
 # AMEVulDetector
-This repo is a python implementation of our AMEVulDetector for smart contract vulnerability detection, which combines the global graph feature and local expert patterns. 
+This repo is a python implementation of Smart Contract Vulnerability Detection: From Pure Neural Network to Interpretable Graph Feature and Expert Pattern Fusion. 
 
 
 ## Overview
@@ -11,7 +11,7 @@ and (c) an attentive multi-encoder network that combines expert patterns and the
 
 
 ## Citation
-Please use this citation if you want to cite our [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf) or codebase in your paper:
+Please use this citation in your paper if you refer to our [paper](https://www.ijcai.org/Proceedings/2020/0454.pdf) or code.
 ```
 @inproceedings{liu2021smart,
   title={Smart Contract Vulnerability Detection: From Pure Neural Network to Interpretable Graph Feature and Expert Pattern Fusion},
@@ -26,7 +26,7 @@ Please use this citation if you want to cite our [paper](https://www.ijcai.org/P
 ## Required Packages
 * **python** 3 or above
 * **TensorFlow** 2.0 or above
-* **sklearn** for model evaluation
+* **sklearn** 0.20.2
 * **numpy** 1.18 or above
 * ****
 
@@ -35,7 +35,7 @@ Run the following script to install the required packages.
 ```shell
 pip install --upgrade pip
 pip install tensorflow==2.0
-pip install scikit-learn
+pip install scikit-learn==0.20.2
 pip install numpy==1.18
 ```
 
@@ -44,18 +44,18 @@ pip install numpy==1.18
 We empirically evaluate our proposed method on two benchmark datasets, namely Ethereum smart contract (ESC) and VNT Chain smart contract (VSC). 
 Following [Zhuang et al., 2020](https://www.ijcai.org/Proceedings/2020/0454.pdf), we conduct experiments for reentrancy and timestamp dependence vulnerability on ESC, and evaluate infinite loop vulnerability on VSC.
 
-The specific description of the two datasets can be found in Zhuang et al., 2020, while the datasets and source code are released on [Github](https://github.com/Messi-Q/GNNSCVulDetector).
+The specific description of the two datasets can be found in Zhuang et al., 2020, while the source code are released on [Github](https://github.com/Messi-Q/GNNSCVulDetector).
 
 More details for the dataset instruction can be found on our dataset page at [Smart-Contract-Dataset](https://github.com/Messi-Q/Smart-Contract-Dataset), which is continuously improving.
 
 ## Getting started
-* To run program, use this command: python AMEVulDetector.py.
-* Also, you can use specific hyper-parameters to train the model. All the hyper-parameters can be found in `parser.py`.
+* To run program, please use this command: python3 AMEVulDetector.py.
+* Also, you can set specific hyper-parameters. and all the hyper-parameters can be found in `parser.py`.
 
 Examples:
 ```shell
-python AMEVulDetector.py
-python AMEVulDetector.py --model EncoderWeight --lr 0.002 --dropout 0.2 --epochs 100 --batch_size 32
+python3 AMEVulDetector.py
+python3 AMEVulDetector.py --model EncoderWeight --lr 0.002 --dropout 0.2 --epochs 100 --batch_size 32
 ```
 
 
